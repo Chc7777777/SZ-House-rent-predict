@@ -1,0 +1,65 @@
+项目概述
+项目简介
+在机器学习技术快速发展的今天，本课题旨在应用先进的机器学习算法，以深圳市房屋租金为研究对象，实现对未来租金趋势的准确预测。
+通过综合考虑多个关键因素，如季节性变化、毕业生租房需求、房型、国家政策等，旨在构建更为精密和可靠的预测模型。我们期望为租赁市场提供更为智能的预测工具，使市场参与者能够更科学地做出决策。
+同时，政府和规划者也可借此研究成果，制定更符合市场实际情况的政策，推动租赁市场的智能、可持续发展。
+通过以上改进，我们将更全面、更深入地研究房屋租金预测问题，为毕业生和市场参与者提供更为准确、科学的租金预测工具，推动租赁市场的智能与健康发展。
+
+项目目的
+通过该项目熟悉利用pandas进行数据分析/数据清洗/数据处理
+通过该项目了解利用matplotlib/seaborn进行数据可视化展示
+通过该项目熟悉如何进行缺失值处理/特征构造
+通过该项目熟悉如何使用sklearn机器学习库进行机器学习建模
+熟悉如何进行特征选择和利用交叉验证+网格搜索/随机搜索/贝叶斯调参/自定义调参等技术进行参数调优
+熟悉利用bagging/boosting/stacking等集成方法来提高模型的泛化性能
+项目涉及知识点
+numpy,pandas,matplotlib,seaborn等
+sklearn机器学习库的使用
+xgboost使用
+缺失值处理/异常值处理方法
+特征衍生技巧
+项目数据介绍
+数据为深圳市链家网通过后裔采集器爬取的数据进行后期去重处理，目前仅有12869条数据，数据进行了异常处理。利用数据集中的房屋信息和月租金训练模型，利用测试集中的房屋信息对测试数据集中的房屋的月租金进行预测。数据集分为两组，分别是训练集和测试集。
+
+该项目数据共有12869条记录,共35列,其中34个特征,1个目标值(月租金)
+
+0   标题        12869 non-null  object 
+ 1   标题链接      12869 non-null  object 
+ 2   大区        12869 non-null  object 
+ 3   街道        12865 non-null  object 
+ 4   小区        12869 non-null  object 
+ 5   租金        12869 non-null  object 
+ 6   品牌        12869 non-null  object 
+ 7   租赁方式      12849 non-null  object 
+ 8   户型        12849 non-null  object 
+ 9   装修        12869 non-null  object 
+ 10  面积        12869 non-null  object 
+ 11  朝向        12869 non-null  object 
+ 12  判断是否高低楼层  0 non-null      float64
+ 13  楼层        12850 non-null  object 
+ 14  总层级       12803 non-null  object 
+ 15  电梯        12849 non-null  object 
+ 16  车位        12849 non-null  object 
+ 17  用水        12849 non-null  object 
+ 18  用电        12849 non-null  object 
+ 19  燃气        12849 non-null  object 
+ 20  采暖        12849 non-null  object 
+ 21  租期        12849 non-null  object 
+ 22  配套设施      12849 non-null  object 
+ 23  付款方式      12849 non-null  object 
+ 24  租金.1      12849 non-null  object 
+ 25  押金        12849 non-null  object 
+ 26  服务费       12849 non-null  object 
+ 27  中介费       12849 non-null  object 
+ 28  A地铁线      12869 non-null  object 
+ 29  A地铁站名字    9967 non-null   object 
+ 30  B地铁线      12869 non-null  object 
+ 31  B地铁站名字    6518 non-null   object 
+ 32  C地铁线      12869 non-null  object 
+ 33  C地铁站名字    3435 non-null   object 
+ 34  是否有地铁     12869 non-null  object 
+
+
+评估方式
+评价指标是RMSE（均方根误差），是回归算法的常用评价指标。算法通过计算预测值和真实房租月租金的均方根误差来衡量回归模型的优劣。均方根误差越小，说明回归模型越好。均方根误差计算公式如下 rmse 其中，
+是房屋月租金的预测值，X是对应房屋的真实月租金。
